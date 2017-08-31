@@ -1,10 +1,9 @@
 <?php
 define('DIR', get_template_directory());
 define('INC_DIR', DIR . '/inc');
-define('WIDGET', INC_DIR . '/widgets');
+define('WIDGET_DIR', INC_DIR . '/widgets');
 
 add_action('wp_enqueue_scripts', 'registry_style');
-
 function registry_style() {
 	global $wp_styles;
 	if ( ! is_admin() ) {
@@ -25,11 +24,13 @@ function registry_style() {
 		wp_register_style( 'ie8', $cssUrl . '/ie8.css', array(), '0.1' );
 		$wp_styles->add_data('ie8', 'conditional', 'IE 8');
 		wp_enqueue_style( 'ie8' );
+
+        wp_register_style( 'customizer', $cssUrl . '/customizer.css', array(), '0.1' );
+        wp_enqueue_style( 'customizer' );
 	}
 }
 
 add_action('wp_enqueue_scripts', 'registry_js');
-
 function registry_js() {
     $jsUrl = get_template_directory_uri() . '/js';
 
@@ -64,7 +65,6 @@ function add_script_code() {
 }
 
 add_action('widgets_init', registry_widgets);
-
 function registry_widgets() {
     $args = array(
         'name'          => __('Primary widget area', 'phung'),
@@ -79,4 +79,6 @@ function registry_widgets() {
     register_sidebar($args);
 
 }
+
+
 ?>
