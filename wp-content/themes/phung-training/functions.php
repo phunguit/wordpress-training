@@ -3,6 +3,13 @@ define('DIR', get_template_directory());
 define('INC_DIR', DIR . '/inc');
 define('WIDGET_DIR', INC_DIR . '/widgets');
 
+if(is_admin()) {
+	require_once INC_DIR . '/html.php';
+}
+
+require_once WIDGET_DIR . '/main.php';
+new Training_Theme_Widget_Main();
+
 add_action('wp_enqueue_scripts', 'registry_style');
 function registry_style() {
 	global $wp_styles;
@@ -71,7 +78,7 @@ function registry_widgets() {
         'id'            => 'primary-widge-area',
         'description'   => __('Add widget to right website', 'phung'),
         'class'         => 'sidebar-widget',
-        'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s clr">',
         'after_widget'  => '</div>',
         'before_title'  => '<span class="widget-title">',
         'after_title'   => '</span>' );
