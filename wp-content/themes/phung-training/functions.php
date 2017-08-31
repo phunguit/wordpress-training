@@ -59,4 +59,20 @@ function add_script_code() {
         </script>';
 }
 
+add_action('widgets_init', registry_widgets);
+
+function registry_widgets() {
+    $args = array(
+        'name'          => __('Primary widget area', 'phung'),
+        'id'            => 'primary-widge-area',
+        'description'   => __('Add widget to right website', 'phung'),
+        'class'         => 'sidebar-widget',
+        'before_widget' => '<div id="%1$s" class="sidebar-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span class="widget-title">',
+        'after_title'   => '</span>' );
+
+    register_sidebar($args);
+
+}
 ?>
