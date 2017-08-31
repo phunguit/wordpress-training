@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<!-- .topbar-date -->
-				<?php get_sidebar('top-menu'); ?>
+				<?php require_once(INC_DIR . '/top-menu.php');?>
 				<!-- #topbar-nav -->
 				<div id="topbar-search" class="clr">
 					<form method="get" class="topbar-searchform" action="#" role="search">
@@ -72,7 +72,7 @@
 			<!-- .ad-spot -->
 		</header>
 		<!-- #header -->
-		<?php get_sidebar('main-menu'); ?>
+        <?php require_once(INC_DIR . '/main-menu.php');?>
 		<!-- #site-navigation-wrap -->
 	</div>
 	<!-- #top-wrap -->

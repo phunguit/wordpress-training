@@ -1,4 +1,8 @@
 <?php
+define('DIR', get_template_directory());
+define('INC_DIR', DIR . '/inc');
+define('WIDGET', INC_DIR . '/widgets');
+
 add_action('wp_enqueue_scripts', 'registry_style');
 
 function registry_style() {

@@ -4,7 +4,7 @@
 		<div id="main" class="site-main clr container">
 			<div id="primary" class="content-area clr">
 				<div id="content" class="site-content left-content boxed-content" role="main">
-					<?php get_sidebar('top-content') ?>
+                    <?php require_once(INC_DIR . '/top-content.php');?>
 					<!-- #home-slider-wrap -->
 					<div class="home-cats clr">
 						<div class="home-cat-entry clr col-1">
@@ -333,7 +333,7 @@
 						<!-- .home-cat-entry -->
 					</div>
 					<!-- .home-cats -->
-					<?php get_sidebar('bottom-content'); ?>
+                    <?php require_once(INC_DIR . '/bottom-content.php');?>
 					<!-- .featured-carousel-wrap -->
 					<div class="ad-spot home-bottom-ad clr">
 						<a href="#" title="Ad">
