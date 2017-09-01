@@ -5,21 +5,26 @@
 
 		public function __construct() {
 			$this->_widget_options = array(
-				'searchForm' => true
+				'searchForm' => true,
+				'socialForm' => true
 			);
 			foreach($this->_widget_options as $key => $val) {
 				if($val == true) {
-					add_action('widgets_init', array($this, 'searchForm'));
+					add_action('widgets_init', array($this, $key));
 				}
 			}
 		}
 
 		public function searchForm() {
-
 			require_once WIDGET_DIR . '/searchForm.php';
 			register_widget('Training_Theme_Widget_SearchFrom');
-
-
 		}
+
+		public function socialForm() {
+			require_once WIDGET_DIR . '/socialForm.php';
+			register_widget('Training_Theme_Widget_SocialForm');
+		}
+
+
 	}
 ?>
