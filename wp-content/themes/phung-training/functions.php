@@ -3,7 +3,7 @@ define('DIR', get_template_directory());
 define('INC_DIR', DIR . '/inc');
 define('WIDGET_DIR', INC_DIR . '/widgets');
 
-if(is_admin()) {
+if(is_admin() && !class_exists('ZendvnHtml')) {
 	require_once INC_DIR . '/html.php';
 }
 
