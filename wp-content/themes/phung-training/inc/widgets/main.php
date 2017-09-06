@@ -7,7 +7,8 @@
 			$this->_widget_options = array(
 				'searchForm' => true,
 				'socialForm' => true,
-                'tabs' => true
+                'tabs' => true,
+                'sliders' => true
 			);
 			foreach($this->_widget_options as $key => $val) {
 				if($val == true) {
@@ -29,6 +30,11 @@
         public function tabs() {
             require_once WIDGET_DIR . '/tabs.php';
             register_widget('Training_Theme_widget_Tabs');
+        }
+
+        public function sliders() {
+		    require_once WIDGET_DIR . '/sliders.php';
+		    register_widget('Training_Theme_Widget_Sliders');
         }
 	}
 ?>
