@@ -90,6 +90,17 @@ Class Training_Theme_widget_Tabs extends WP_Widget
         require_once WIDGET_DIR . '/html/tabsHtml.php';
         echo $after_widget;
     }
+
+    private function get_img_url($post_content) {
+        $image = '';
+        if(!empty($post_content)) {
+            preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post_content, $matches );
+        }
+
+        if ( isset( $matches ) ) $image = $matches[1][0];
+
+        return $image;
+    }
 }
 
 ?>

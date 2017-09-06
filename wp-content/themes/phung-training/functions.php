@@ -84,8 +84,11 @@ function registry_widgets() {
         'after_title'   => '</span>' );
 
     register_sidebar($args);
-
 }
 
+add_action('after_setup_theme', 'theme_post_formats');
+function theme_post_formats() {
+    add_theme_support('post-formats', array('gallery', 'video', 'audio'));
+}
 
 ?>
